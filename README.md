@@ -1,5 +1,5 @@
 # SiteCSS
-https://josealmironeto.github.io/SiteCSSanimation/
+https://josealmironeto.github.io/CSSanimation/
 
 ###
 Imagem do site:
