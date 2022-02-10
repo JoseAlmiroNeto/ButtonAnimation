@@ -1,140 +1,130 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-
 * {
-    margin: 0;
+    border: 0;
     padding: 0;
+    margin: 0;
     box-sizing: border-box;
 }
 
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-color: #141414;
-}
-body::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background: linear-gradient(to top, rgb(0, 0, 255),rgb(255, 0, 0));
-    clip-path: circle(22% at 30% 20%);
-}
-body::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background: linear-gradient(to top, rgb(50, 0, 143),rgb(0, 0, 0));
-    clip-path: circle(20% at 70% 90%);
+    background-image: url(espaco.png);
 }
 
-.container {
-    position: relative;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 6px;
-    overflow: hidden;
-    z-index: 10;
-    backdrop-filter: blur(15px);
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
-    border-left: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.2);
-}
-
-.container .calculadora {
-    position: relative;
-    display: grid;
-}
-
-.container .calculadora .value {
-    grid-column: span 4;
-    height: 140px;
-    width: 300px;
-    text-align: right;
-    border: none;
-    outline: none;
-    padding: 10px;
-    font-size: 30px;
-    background: transparent;
+.cabecalho {
     color: white;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    border-right: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
 }
-.container .calculadora span {
-    display: grid;
-    place-items: center;
-    width: 75px;
-    height: 75px;
-    font-weight: 400;
-    cursor: pointer;
-    font-size: 20px;
-    user-select: none;
-    border-bottom: 1px solid rgba(37, 37, 37, 0.5);
-    border-left: 1px solid rgba(37, 37, 37, 0.5);
+.img_topo {
+    width: 8pc;
+    margin-right: 30pc;
 }
-
-.container .calculadora .clear {
-    grid-column: span 2;
-    width: 150px;
+.topo {
+    display: flex;
+    gap: 32px;
 }
-.container .calculadora .plus {
-    grid-row: span 2;
-    height: 150px;
-}
-
-.container .calculadora .zero {
-    grid-column: span 2;
-    width: 150px;
-}
-
-
-.num {
+.item_topo {
     cursor: pointer;
     position: relative;
-    color: rgb(255, 255, 255);
+    padding: 10px 30px;
+    margin: 0 15px;
+    color: white;
+    text-decoration: none;
     text-transform: uppercase;
     letter-spacing: 2px;
     font-size: 20px;
     overflow: hidden;
-    transition: 0.1s;
+    transition: 0.5s;
 }
-.num:hover {
-    cursor: pointer;
-    background: white;
-    color: rgb(0, 0, 0);
+.item_topo:hover {
+    background-color: white;
+    color: black;
     box-shadow: 0 0 50px white;
-    transition-delay: 0.3s;
 }
-.num:before {
-    cursor: pointer;
+
+.item_topo:before{
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 10px;
     height: 10px;
-    transition: 0.1s;
+    border-top: 2px solid white;
+    border-left: 2px solid white;
+    transition: 0.5s;
 }
-.num:before {
-    cursor: pointer;
+.item_topo:hover:before{
+    width: 100%;
+    height: 100%;
 }
-.num:after {
-    cursor: pointer;
+.item_topo:after{
     content: '';
     position: absolute;
     bottom: 0;
     right: 0;
     width: 10px;
     height: 10px;
-    transition: 0.1s;
+    border-bottom: 2px solid white;
+    border-right: 2px solid white;
+    transition: 0.5s;
 }
-.num:hover:after {
-    cursor: pointer;
+.item_topo:hover::after{
     width: 100%;
     height: 100%;
+}
+
+.corpo {
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 86vh;
+    width: 100vw;
+}
+
+.texto1 {
+    color: white;
+    font-size: 34px;
+    color: rgb(189, 189, 189);
+}
+.texto2 {
+    font-size: 10pc;
+}
+.texto3 {
+    color: rgb(189, 189, 189);
+    font-size: 23px;
+}
+
+.circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20pc;
+    transform:  translate(-50,-50);
+    width: 250px;
+    height: 250px;
+    text-align: center;
+    line-height: 60px;
+    box-sizing: border-box;
+    background: linear-gradient(100deg, rgb(0, 225, 255),rgb(123, 255, 0),rgb(238, 255, 0),rgb(0, 225, 255));
+    background-size: 400%;
+    border-radius: 200px;
+}
+.circle:hover {
+    animation: animate 8s linear infinite;
+}
+@keyframes animate {
+    0% { 
+    background-position: 0%;
+    } 
+    100% { 
+    background-position: 400%;
+    }
+}
+
+.btn {
+    background: transparent;
+    font-size: 30px;
+    color: white;
 }
